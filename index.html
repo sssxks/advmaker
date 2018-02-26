@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>自定义进度制作器</title>
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<link rel="stylesheet" type="text/css" href="CSS/animate.css">
+		<link rel="stylesheet" type="text/css" href="CSS/jquery-ui.min.css">		
+	</head>
+	<body onselectstart="return false;" unselectable="on">
+		<div id="header">
+			<h1 id="title">自定义进度制作器<span class="subtitle"> By sss_xks</span></h1>
+		</div>
+		<div id="content">
+			<h2 class="settings_title">基础设置</h2>
+			<div id="c_basic" class="settings_item">
+				<p>
+					<span title="文件存储位置的第一层">命名空间</span>: 
+					<input type="text" id="st_namespace">
+				</p>
+				<p>
+					<span title="第二层开始的目录及文件名">名称</span>: 
+					<input type="text" id="st_name">
+				</p>
+				<p id="frame">
+					<span title="该进度的难度">难度</span>: <select id="st_frame" style="font-size: 15px">
+						<option value="task" selected>普通</option>
+						<option value="goal">目标</option>
+						<option value="challenge">挑战</option>
+					</select>
+				</p>
+				<p>
+					<input type="checkbox" id="st_root" class="checkbox"><span title="是否为一棵进度树的根">根进度</span>
+				</p>
+			</div>
+			<h2 class="settings_title">
+				<input type="checkbox" id="st_display" checked="checked" class="checkbox"></input><span title="去除该项即可不在进度树中显示">显示设置</span>
+			</h2>
+			<div id="c_display" class="settings_item">
+				<h3 id="d_icon" class="settings_title2">图标<span id="i_root" style="display:none;">与分页图标</span></h3>
+				<div class="settings_item2">
+					<p>英文ID: <input types="text" id="st_icon_item"></p>
+					<p>数据值: <input type="text" id="st_icon_data"></p>
+				</div>
+				<h3 id="d_text" class="settings_title2">文字</h3>
+				<div class="settings_item2">
+					<p>标题: <input type="text" id="st_title"></p>
+					<p>描述: <input type="text" id="st_description"></p>
+				</div>
+				<h3 id="d_other" class="settings_title2">其他</h3>
+				<div class="settings_item2">
+					<p id="background" style="display: none;">分页背景: <input type="text" id="st_background"></p>
+					<p id="parent">父进度: <input type="text" id="st_parent"></p>
+					<p id="hidden"><input type="checkbox" id="st_hidden" class="checkbox">完成前不显示</p>
+					<p id="show_toast"><input type="checkbox" id="st_show_toast" class="checkbox" checked>完成后显示横幅</p>
+				<p id="announce_to_chat"><input type="checkbox" id="st_announce_to_chat" class="checkbox" checked>完成后广播至聊天栏</p>
+				</div>
+			</div>
+			<h2 class="settings_title">准则设置</h2>
+			<div id="c_criteria" class="settings_item">
+				<p>准则列表:</p>
+				<div id="criteria_list">
+					<p id="c_addGroup" class="group">
+						<a id="addGroup" href="javascript:void(0);">新建组</a>
+					</p>
+				</div>
+			</div>
+			<h2 class="settings_title"><input type="checkbox" id="has_reward_or_do_not"  checked class="checkbox"></input>奖励设置</h2>
+			<div id="c_reward" class="settings_item">
+				<p>配方列表: </p>
+				<p><textarea rows="3" cols="30" placeholder="在此书写 一行一个" id="st_recipes"></textarea></p>
+				<p>可掠夺物品列表: </p>
+				<p><textarea rows="3" cols="30" placeholder="在此书写 一行一个" id="st_loot"></textarea></p>
+				<p>函数: <input type="text" id="st_function"></input></p>
+			</div>
+			<p>
+				<button class="generate button">生成</button>
+			</p>
+		</div>
+		<!-- 模态框 -->
+		<div class="modal" id="modal">
+			<div class="modal-content">
+				
+			</div>
+		</div>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="JS/modal.js"></script>
+		<script src="JS/criteria.js"></script>
+		<script src="JS/animate.js"></script>
+		<script src="JS/jquery-ui.min.js"></script>
+		<script src="JS/generate.js"></script>
+	</body>
+</html>
