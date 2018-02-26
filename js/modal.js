@@ -7,6 +7,7 @@ function modal(remote,data){
 			throw 'cannot load modal';
 		};
 	});
+	alert(content);
 	if (data != null) {
 		for (var i in data){
 			content.replace(new RegExp('$' + i + '$', 'g'),data[i]);
