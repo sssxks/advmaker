@@ -2,9 +2,9 @@ function modal(remote,data){
 	var modalContent = $.get(remote,function(responseTxt,statusTxt,xhr){
 		if(statusTxt=="success"){
 			if (data != null) {
-				console.log(1)
 				for (var i in data){
-					console.log(2)
+					console.log(i);
+					console.log(data[i]);
 					responseTxt.replace(new RegExp('$' + i + '$', 'g'),data[i]);
 				};
 			};
