@@ -1,5 +1,5 @@
 function modal(remote,data){
-	var content = $.get(remote,function(responseTxt,statusTxt,xhr){
+	var modalContent = $.get(remote,function(responseTxt,statusTxt,xhr){
 		if(statusTxt=="success"){
 			$('#modal').show();
 			$('body').css('overflow','hidden').css('padding-right','17px');
@@ -7,11 +7,11 @@ function modal(remote,data){
 			throw 'cannot load modal';
 		};
 	});
-	alert(content);
+	alert(modalContent);
 	if (data != null) {
 		for (var i in data){
-			content.replace(new RegExp('$' + i + '$', 'g'),data[i]);
+			modalContent.replace(new RegExp('$' + i + '$', 'g'),data[i]);
 		};
 	};
-	$('.modal-content').html(content);
+	$('.modal-content').html(modalContent);
 }
