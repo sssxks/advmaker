@@ -3,9 +3,9 @@ function modal(remote,data){
 		if(statusTxt=="success"){
 			if (data != null) {
 				for (var i in data){
-					console.log('\$' + i + '\$');
+					console.log('\\$' + i + '\\$');
 					console.log(data[i]);
-					responseTxt.replace(new RegExp('\$' + i + '\$', 'g'),data[i]);
+					responseTxt.replace(new RegExp('\\$' + i + '\\$', 'g'),data[i]);
 				};
 			};
 			console.log(responseTxt);
