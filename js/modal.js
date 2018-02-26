@@ -18,3 +18,7 @@ function modal(remote,data){
 		};
 	});	
 }
+$('.close,#button-ok').click(function (){
+	$('#modal').hide();
+	$('body').css('overflow','auto').css('padding-right','0');
+})
