@@ -1,5 +1,7 @@
 $(document).ready(function(){
 	$('.generate').click(function(){
-		modal('modal/generate.htm');
+		modal('modal/generate.htm',{
+			path: 'dsa',
+			code: 'asd'});
 	});
 });
