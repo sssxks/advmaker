@@ -11,11 +11,8 @@ function modal(remote,data){
 			$('.modal-content').html(responseTxt);
 			$('#modal').show();
 			$('#modal').addClass('animated filpInX')
-				.css('-webkit-animation-duration','0.5s')
-				.css('animation-duration','0.5s')
 				.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 					$(this).removeClass('animated fadeInUp');
-					$(this).attr('style','');
 				});
 			$('body').css('overflow','hidden').css('padding-right','17px');
 			
@@ -23,12 +20,9 @@ function modal(remote,data){
 			$('.close,#button-ok').on('click',function (){
 				console.log('hidden modal');
 				$('#modal').hide();
-				$('#modal').addClass('animated filpInX')
-					.css('-webkit-animation-duration','0.5s')
-					.css('animation-duration','0.5s')
+				$('#modal').addClass('animated filpOutX')
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass('animated fadeInUp');
-						$(this).attr('style','');
 					});
 				$('body').css('overflow','auto').css('padding-right','0');
 			});
