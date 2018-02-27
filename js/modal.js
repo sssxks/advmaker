@@ -23,9 +23,7 @@ function modal(remote,data){
 						$(this).removeClass('animated flipOutX');
 						$('body').css('overflow','auto').css('padding-right','0');
 					});
-				setTimeout(function(){
-					$('#modal').fadeOut(300);
-				},700);
+				$('#modal').fadeOut(300);
 			});
 		} else if(statusTxt=="error"){
 			throw 'cannot load modal';
