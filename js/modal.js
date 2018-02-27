@@ -21,10 +21,12 @@ function modal(remote,data){
 				$('.modal-content').addClass('animated flipOutX')
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass('animated flipOutX');
-						$('#modal').fadeOut(100);
 						$('body').css('overflow','auto').css('padding-right','0');
 					});
 			});
+			setTimeout(function(){
+				$('#modal').fadeOut(100);
+			},900);
 		} else if(statusTxt=="error"){
 			throw 'cannot load modal';
 		};
