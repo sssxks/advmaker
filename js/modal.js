@@ -3,9 +3,8 @@ function modal(remote,data){
 		if(statusTxt=="success"){
 			if (data != null) {
 				for (var i in data){
-					console.log('\\$' + i + '\\$');
-					console.log(data[i]);
-					responseTxt.replace(new RegExp('\\$' + i + '\\$', 'g'),data[i]);
+					console.log('_' + i + ':' + data[i]);
+					responseTxt.replace(new RegExp('_' + i, 'g'), data[i]);
 				};
 			};
 			console.log(responseTxt);
@@ -18,7 +17,9 @@ function modal(remote,data){
 		};
 	});	
 }
-$('.close,#button-ok').click(function (){
-	$('#modal').hide();
-	$('body').css('overflow','auto').css('padding-right','0');
-})
+$(document).ready(function(){
+	$('.close,#button-ok').click(function (){
+		$('#modal').hide();
+		$('body').css('overflow','auto').css('padding-right','0');
+	});
+});
