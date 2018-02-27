@@ -19,6 +19,7 @@ function modal(remote,data){
 }
 $(document).ready(function(){
 	$('.close,#button-ok').click(function (){
+		console.log('hidden modal');
 		$('#modal').hide();
 		$('body').css('overflow','auto').css('padding-right','0');
 	});
