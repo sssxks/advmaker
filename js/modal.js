@@ -7,7 +7,7 @@ function modal(remote,data){
 					responseTxt.split('_' + i).join(data[i]);
 				};
 			};
-			console.log(responseTxt);
+			console.log(typeof responseTxt);
 			$('.modal-content').html(responseTxt);
 			$('#modal').show();
 			$('.modal-content').addClass('animated flipInX')
