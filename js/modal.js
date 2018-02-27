@@ -9,7 +9,7 @@ function modal(remote,data){
 			};
 			console.log(responseTxt);
 			$('.modal-content').html(responseTxt);
-			$('#modal').show();
+			$('#modal').fadeIn(100);
 			$('.modal-content').addClass('animated flipInX')
 				.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 					$(this).removeClass('animated flipInX');
@@ -21,7 +21,7 @@ function modal(remote,data){
 				$('.modal-content').addClass('animated flipOutX')
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass('animated flipOutX');
-						$('#modal').hide();
+						$('#modal').fadeOut(100);
 						$('body').css('overflow','auto').css('padding-right','0');
 					});
 			});
