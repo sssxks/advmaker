@@ -4,7 +4,7 @@ function modal(remote,data){
 			if (data != null) {
 				for (var i in data){
 					console.log('_' + i + ':' + data[i]);
-					console.log(responseTxt.split('_' + i))//.join(data[i]);
+					console.log(responseTxt.split('_' + i).join(data[i]));
 				};
 			};
 			console.log(typeof responseTxt);
