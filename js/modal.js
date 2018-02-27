@@ -22,8 +22,8 @@ function modal(remote,data){
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass('animated flipOutX');
 						$('#modal').hide();
+						$('body').css('overflow','auto').css('padding-right','0');
 					});
-				$('body').css('overflow','auto').css('padding-right','0');
 			});
 		} else if(statusTxt=="error"){
 			throw 'cannot load modal';
