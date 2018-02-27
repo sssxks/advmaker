@@ -18,11 +18,10 @@ function modal(remote,data){
 			
 			$('.close,#button-ok').off();
 			$('.close,#button-ok').on('click',function (){
-				console.log('hidden modal');
-				$('#modal').hide();
 				$('.modal-content').addClass('animated flipOutX')
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass('animated flipOutX');
+						$('#modal').hide();
 					});
 				$('body').css('overflow','auto').css('padding-right','0');
 			});
