@@ -3,12 +3,10 @@ function modal(remote,data){
 		if(statusTxt=="success"){
 			if (data != null) {
 				for (var i in data){
-					console.log('_' + i + ':' + data[i]);
-					console.log(responseTxt.split('_' + i).join(data[i]));
-					var responseTxt = responseTxt.split('_' + i).join(data[i]);
+					responseTxt = responseTxt.split('_' + i).join(data[i]);
 				};
 			};
-			console.log(typeof responseTxt);
+			console.log(responseTxt);
 			$('.modal-content').html(responseTxt);
 			$('#modal').show();
 			$('.modal-content').addClass('animated flipInX')
