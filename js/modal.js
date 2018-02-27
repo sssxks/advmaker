@@ -4,7 +4,7 @@ function modal(remote,data){
 			if (data != null) {
 				for (var i in data){
 					console.log('_' + i + ':' + data[i]);
-					responseTxt.split('_' + i).join(data[i]);
+					console.log(responseTxt.split('_' + i))//.join(data[i]);
 				};
 			};
 			console.log(typeof responseTxt);
@@ -22,8 +22,8 @@ function modal(remote,data){
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 						$(this).removeClass('animated flipOutX');
 						$('body').css('overflow','auto').css('padding-right','0');
+						$('#modal').hide();
 					});
-				$('#modal').hide();
 			});
 		} else if(statusTxt=="error"){
 			throw 'cannot load modal';
