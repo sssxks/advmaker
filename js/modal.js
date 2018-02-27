@@ -10,9 +10,9 @@ function modal(remote,data){
 			console.log(responseTxt);
 			$('.modal-content').html(responseTxt);
 			$('#modal').show();
-			$('.modal-content').addClass('animated filpInX')
+			$('.modal-content').addClass('animated flipInX')
 				.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-					$(this).removeClass('animated filpInX');
+					$(this).removeClass('animated flipInX');
 				});
 			$('body').css('overflow','hidden').css('padding-right','17px');
 			
@@ -20,9 +20,9 @@ function modal(remote,data){
 			$('.close,#button-ok').on('click',function (){
 				console.log('hidden modal');
 				$('#modal').hide();
-				$('.modal-content').addClass('animated filpOutX')
+				$('.modal-content').addClass('animated flipOutX')
 					.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-						$(this).removeClass('animated filpOutX');
+						$(this).removeClass('animated flipOutX');
 					});
 				$('body').css('overflow','auto').css('padding-right','0');
 			});
