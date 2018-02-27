@@ -9,7 +9,7 @@ function modal(remote,data){
 			};
 			console.log(responseTxt);
 			$('.modal-content').html(responseTxt);
-			$('#modal').fadeIn(1000);
+			$('#modal').show();
 			$('.modal-content').addClass('animated flipInX')
 				.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 					$(this).removeClass('animated flipInX');
@@ -23,7 +23,7 @@ function modal(remote,data){
 						$(this).removeClass('animated flipOutX');
 						$('body').css('overflow','auto').css('padding-right','0');
 					});
-				$('#modal').fadeOut(700);
+				$('#modal').hide();
 			});
 		} else if(statusTxt=="error"){
 			throw 'cannot load modal';
