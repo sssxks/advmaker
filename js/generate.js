@@ -1,13 +1,11 @@
 $(document).ready(function(){
 	$('.generate').click(function(){
-		var output = {
-				criteria:{}
-			};
+		var output = {};
 		if (document.getElementById("st_display").checked) {
 			output.display = {};
 			
 			var title = document.getElementById("st_title").value;
-			if (title == null || title == '') {
+			if (!title) {
 				modal('modal/generate-error.htm',{
 					reason:'未输入标题'
 				});
@@ -27,26 +25,29 @@ $(document).ready(function(){
 			
 			var icon = {
 				item: document.getElementById("st_icon_item").value,
-				data: document.getElementById("st_icon_data").value != null ?
-					document.getElementById("st_icon_data").value :
+				data: Number(document.getElementById("st_icon_data").value) ?
+					Number(document.getElementById("st_icon_data").value) :
 					0
 				};
-			if (icon.item == null||icon.item == ''){
+			if (!icon.item){
 				modal('modal/generate-error.htm',{
 					reason:'未输入图标的物品ID'
 				});
 				return;
 			}
+			output.display.icon = icon;
 			
 			var frame = document.getElementById("st_frame").value;
 			output.display.frame = frame;
 			
 			if (document.getElementById("st_root").checked) {
 				var background = document.getElementById("st_background").value;
-				output.display.background = background;
+				if (background) {
+					output.display.background = background;
+				};
 			} else {
 				var parent = document.getElementById("st_parent").value;
-				if (parent == null || parent == '') {
+				if (!parent) {
 					modal('modal/generate-error.htm',{
 						reason:'未输入父进度'
 					});
@@ -68,7 +69,19 @@ $(document).ready(function(){
 		output
 		
 		var namespace = document.getElementById("st_namespace").value;
+		if (!namespace) {
+			modal('modal/generate-error.htm',{
+				reason:'未输入命名空间'
+			});
+			return;
+		};
 		var name = document.getElementById("st_name").value;
+		if (!name) {
+			modal('modal/generate-error.htm',{
+				reason:'未输入名称'
+			});
+			return;
+		};
 		modal('modal/generate-success.htm',{
 			path: namespace + '/' + name,
 			code: JSON.stringify(output)});
