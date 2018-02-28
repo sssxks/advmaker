@@ -89,9 +89,11 @@ $(document).ready(function(){
     	    		temp.push(output.slice(temp, temp + 83));
   		}
   		output = temp.join("\n");
+		console.log(output);
 		
 		modal('modal/generate-success.htm',{
-			path: namespace + '/' + name,
+			path: '你的存档/data/advancements/' + namespace + '/',
+			name: name,
 			code: output});
 	});
 });
