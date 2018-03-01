@@ -88,7 +88,7 @@ $(document).ready(function(){
   		for (var i = 0; i <= output.length; i += 83) {
     	    		temp.push(output.slice(temp, temp + 83));
   		}
-		console.log(output);
+		console.log(temp);
   		output = temp.join("<br>");
 		
 		modal('modal/generate-success.htm',{
