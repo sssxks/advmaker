@@ -86,7 +86,7 @@ $(document).ready(function(){
 		
 		var temp = [];
   		for (var i = 0; i <= output.length; i += 83) {
-    	    		temp.push(output.slice(temp, temp + 83));
+    	    		temp.push(output.slice(i, i + 83));
   		}
 		console.log(temp);
   		output = temp.join("<br>");
