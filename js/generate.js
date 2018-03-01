@@ -53,7 +53,7 @@ $(document).ready(function(){
 					});
 					return;
 				};
-				output.display.parent = parent;
+				output.parent = parent;
 			};
 			
 			var hidden = document.getElementById("st_hidden").checked;
