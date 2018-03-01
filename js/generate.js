@@ -83,14 +83,14 @@ $(document).ready(function(){
 			return;
 		};
 		output = JSON.stringify(output);
-		
+		/*
 		var temp = [];
-  		for (var i = 0; i <= output.length; i += 83) {
-    	    		temp.push(output.slice(i, i + 83));
-  		}
+	  	for (var i = 0; i <= output.length; i += 83) {
+			temp.push(output.slice(i, i + 83));
+	  	}
 		console.log(temp);
-  		output = temp.join("<br>");
-		
+	  	output = temp.join("<br>");
+		*/
 		modal('modal/generate-success.htm',{
 			path: '你的存档/data/advancements/' + namespace + '/',
 			name: name,
